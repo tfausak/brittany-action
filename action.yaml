@@ -1,0 +1,21 @@
+name: Brittany action
+description: Checks that Haskell files are formatted with Brittany.
+inputs:
+  config:
+    description: The Brittany config to use.
+    required: false
+    default: brittany.yaml
+  pattern:
+    description: The Haskell files to check.
+    required: false
+    default: '**/*.hs'
+  version:
+    description: The version of Brittany to use.
+    required: false
+    default: 0.14.0.0
+runs:
+  using: node12
+  main: main.js
+branding:
+  icon: printer
+  color: purple
