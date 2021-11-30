@@ -48,7 +48,7 @@ const isUndefined = (x) =>
     const files = await globber.glob();
 
     if (files.length > 0) {
-      console.log('::add-matcher::problem-matcher.json');
+      console.log(`::add-matcher::${__dirname}/problem-matcher.json`);
       const arguments = ['--check-mode', '--config-file', config, ...files.sort()];
       await exec.exec(brittany, arguments);
     }
