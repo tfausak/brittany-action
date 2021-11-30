@@ -48,14 +48,11 @@ const isUndefined = (x) =>
     const files = await globber.glob();
 
     if (files.length > 0) {
-      const arguments = ['--check-mode', ...files];
-      if (config) {
-        arguments.push('--config-file', config);
-      }
+      console.log('::add-matcher::problem-matcher.json');
+      const arguments = ['--check-mode', '--config-file', config, ...files.sort()];
       await exec.exec(brittany, arguments);
     }
   } catch (error) {
-    console.error(error);
     core.setFailed(error);
   }
 })();

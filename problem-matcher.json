@@ -1,0 +1,15 @@
+{
+  "problemMatcher": [
+    {
+      "owner": "brittany",
+      "severity": "warning",
+      "pattern": [
+        {
+          "regexp": "^(.+): (.+)$",
+          "file": 2,
+          "message": 1
+        }
+      ]
+    }
+  ]
+}
